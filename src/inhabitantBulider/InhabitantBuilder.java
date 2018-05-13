@@ -5,12 +5,21 @@
  */
 package inhabitantBulider;
 
+import inhabitantInfo.Inhabitant;
+
 
 /**
  *
  * @author LeopardProMK
  */
 public interface InhabitantBuilder {
+   public void buildAccommodationCard();
 
-   
+    public void buildTherapy();
+
+    public void buildDiagnosis();
+
+    public void buildInhabitant();
+    
+    public Inhabitant getInhabitant();  
 }
