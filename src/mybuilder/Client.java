@@ -23,7 +23,11 @@ public class Client {
         /* vs */
         
         /* Inhabitant */
-        //...
+         Inhabitant inhabitant1 = new Inhabitant.Builder("Michal", true, 4, 26)
+                .setIsOsteoporosis(true)
+                .setPlaceOfResidence("Bieslko-Biała")
+                .setTypeOfTherapy("Odpoczynek")
+                .build();
     }
 
 }
