@@ -5,7 +5,10 @@
  */
 package inhabitantBulider;
 
+import inhabitantInfo.AccommodationCard;
+import inhabitantInfo.Diagnosis;
 import inhabitantInfo.Inhabitant;
+import inhabitantInfo.Therapy;
 
 /**
  *
@@ -13,29 +16,42 @@ import inhabitantInfo.Inhabitant;
  */
 public class PermanentResidenceBuilder implements InhabitantBuilder  {
 
+    Inhabitant inhabitant = null;
+
+    Therapy therapy = null;
+    Diagnosis diagnosis = null;
+    AccommodationCard accommodationCard = null;
+
     @Override
     public void buildAccommodationCard() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        String typeOfAccommodation = "";
+          this. accommodationCard = new AccommodationCard(typeOfAccommodation);
     }
 
     @Override
     public void buildTherapy() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        String typeOfTherapy = "";
+      this. therapy = new Therapy(typeOfTherapy);
     }
 
     @Override
     public void buildDiagnosis() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        String description = "";
+      this.diagnosis = new Diagnosis(description);
     }
 
     @Override
     public void buildInhabitant() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        String name = "";
+        this.inhabitant = new Inhabitant.Builder(name, 0, 0, 0, accommodationCard)
+                .setDiagnosis(diagnosis)
+                .setTherapy(therapy)
+                .build();
     }
 
     @Override
     public Inhabitant getInhabitant() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return inhabitant;
     }
 
    
