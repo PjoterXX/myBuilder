@@ -5,6 +5,11 @@
  */
 package mybuilder;
 
+import inhabitantBulider.InhabitantBuilder;
+import inhabitantBulider.InhabitantDirector;
+import inhabitantBulider.PermanentResidenceBuilder;
+import inhabitantInfo.Inhabitant;
+
 /**
  *
  * @author DominatorMK
@@ -39,7 +44,11 @@ public class Client {
         /* vs */
 
         /* Good */
-        //...
+        InhabitantBuilder inhabitantBuilder = new PermanentResidenceBuilder();
+        InhabitantDirector director = new InhabitantDirector(inhabitantBuilder);
+
+        director.registerInhabitant();
+        Inhabitant inhabitant3 = director.getInhabitant();
     }
 
 }
