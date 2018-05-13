@@ -15,19 +15,31 @@ public class Client {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        /* BadInhabitant */
-        BadInhabitant badInhabitant1 = new BadInhabitant("Ala", true, 1, 60);
-        BadInhabitant BadInhabitant2 = new BadInhabitant("Marek", true, 2, 60, "Odpoczynek");
-        BadInhabitant BadInhabitant3 = new BadInhabitant("Michał", true, 3, true, "Odpoczynek", "Bieslko-Biała", 26);
+        /* Bad */
+        // Mieszaniec zarejestrowany na pobyt staly
+        mybuilder3Bad.Therapy therapy1 = new mybuilder3Bad.Therapy("Odpoczynek");
+        mybuilder3Bad.Diagnosis diagnosis1 = new mybuilder3Bad.Diagnosis("Lekkie zmęczenie");
+        mybuilder3Bad.AccommodationCard accommodationCard1 = new mybuilder3Bad.AccommodationCard("Pobyt stały");
+
+        mybuilder3Bad.Inhabitant inhabitant1 = new mybuilder3Bad.Inhabitant.Builder("Michal", 1, 2342234, 76, accommodationCard1)
+                .setDiagnosis(diagnosis1)
+                .setTherapy(therapy1)
+                .build();
+
+        // Mieszkaniec zarejestrowany tymczasowo
+        mybuilder3Bad.Therapy therapy2 = new mybuilder3Bad.Therapy("Odpoczynek");
+        mybuilder3Bad.Diagnosis diagnosis2 = new mybuilder3Bad.Diagnosis("Lekkie zmęczenie");
+        mybuilder3Bad.AccommodationCard accommodationCard2 = new mybuilder3Bad.AccommodationCard("Pobyt tymczasowy");
+
+        mybuilder3Bad.Inhabitant inhabitant2 = new mybuilder3Bad.Inhabitant.Builder("Jacek", 1, 1442634, 88, accommodationCard2)
+                .setDiagnosis(diagnosis2)
+                .setTherapy(therapy2)
+                .build();
 
         /* vs */
-        
-        /* Inhabitant */
-         Inhabitant inhabitant1 = new Inhabitant.Builder("Michal", true, 4, 26)
-                .setIsOsteoporosis(true)
-                .setPlaceOfResidence("Bieslko-Biała")
-                .setTypeOfTherapy("Odpoczynek")
-                .build();
+
+        /* Good */
+        //...
     }
 
 }
