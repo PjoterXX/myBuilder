@@ -5,6 +5,8 @@
  */
 package inhabitantBulider;
 
+import inhabitantInfo.Inhabitant;
+
 
 /**
  *
@@ -12,5 +14,19 @@ package inhabitantBulider;
  */
 public class InhabitantDirector {
 
-    
+    private InhabitantBuilder inhabitantBuilder = null;
+
+    public InhabitantDirector(InhabitantBuilder inhabitantBuilder) {
+        this.inhabitantBuilder = inhabitantBuilder;
+    }
+
+    public void registerInhabitant() {
+        inhabitantBuilder.buildAccommodationCard();
+        inhabitantBuilder.buildDiagnosis();
+        inhabitantBuilder.buildTherapy();
+    }
+
+    public Inhabitant getInhabitant() {
+        return this.inhabitantBuilder.getInhabitant();
+    }
 }
